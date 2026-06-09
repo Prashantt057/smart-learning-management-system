@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --sky-blue: #d9edf3;
+  --mist-blue: #c7dde8;
+  --soft-white: #fdfaf5;
+  --sakura-pink: #f7d6d0;
+  --coral: #ef7d5b;
+  --branch-black: #2f2a28;
+
+  --shadow: 0 4px 15px rgba(0,0,0,0.08);
+  --radius: 20px;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background: var(--sky-blue);
+  font-family: Georgia, serif;
+}
