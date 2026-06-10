@@ -23,9 +23,10 @@
 
 .logo-section p {
   margin-top: 6px;
-  font-size: 0.85rem;
+  font-size: 0.72rem;
   color: #8a8a8a;
-  letter-spacing: 2px;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
 }
 
 /* Navigation */
