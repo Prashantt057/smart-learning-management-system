@@ -1,11 +1,15 @@
 export interface Course {
-  id: number;
+  id: string;
   title: string;
-  categoryId: number;
-  instructorId: number;
+  category: string;
   duration: string;
-  level: string;
-  rating: number;
-  status: string;
-  thumbnail: string;
+  level: 'Beginner' | 'Intermediate' | 'Advanced';
+  instructor: string;
+  completionStatus: 'Not Started' | 'In Progress' | 'Completed';
+  syllabus: string[];
+  objectives: string[];
+  prerequisites: string[];
+  description: string;
+  imageUrl?: string;
+  availability: 'Available' | 'Upcoming' | 'Closed';
 }
