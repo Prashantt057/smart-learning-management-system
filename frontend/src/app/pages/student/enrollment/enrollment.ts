@@ -3,8 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { FormsModule } from '@angular/forms';
 
-import { MatCardModule } from '@angular/material/card';
-import { MatButtonModule } from '@angular/material/button';
+import { Sidebar } from '../../../components/sidebar/sidebar';
+import { Header } from '../../../components/header/header';
 
 import { EnrollmentService } from '../../../services/enrollment';
 import { CourseService } from '../../../services/course';
@@ -17,8 +17,8 @@ import { InstructorService } from '../../../services/instructor';
   imports: [
     CommonModule,
     FormsModule,
-    MatCardModule,
-    MatButtonModule
+    Sidebar,
+    Header
   ],
   templateUrl: './enrollment.html',
   styleUrl: './enrollment.css'
