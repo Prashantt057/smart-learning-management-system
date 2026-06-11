@@ -2,34 +2,129 @@
 
   <h1>My Enrollments</h1>
 
-  <table *ngIf="enrollments.length > 0">
+  <h2>Available Courses</h2>
+  <p>Courses Count: {{ courses.length }}</p>
+<p>Enrollments Count: {{ enrollments.length }}</p>
 
-    <thead>
-      <tr>
-        <th>ID</th>
-        <th>User ID</th>
-        <th>Course ID</th>
-        <th>Batch ID</th>
-        <th>Status</th>
-      </tr>
-    </thead>
+  <div class="course-grid">
 
-    <tbody>
-      <tr *ngFor="let enrollment of enrollments">
+    <mat-card
+      class="course-card"
+      *ngFor="let course of courses">
 
-        <td>{{ enrollment.id }}</td>
+      <mat-card-header>
 
-        <td>{{ enrollment.userId }}</td>
+        <mat-card-title>
+          {{ course.title }}
+        </mat-card-title>
 
-        <td>{{ enrollment.courseId }}</td>
+      </mat-card-header>
 
-        <td>{{ enrollment.batchId }}</td>
+      <mat-card-content>
 
-        <td>{{ enrollment.status }}</td>
+        <p>
+          <strong>Category:</strong>
+          {{ getCategoryName(course.categoryId) }}
+        </p>
 
-      </tr>
-    </tbody>
+        <p>
+          <strong>Instructor:</strong>
+          {{ getInstructorName(course.instructorId) }}
+        </p>
 
-  </table>
+        <p>
+          <strong>Duration:</strong>
+          {{ course.duration }}
+        </p>
+
+        <p>
+          <strong>Level:</strong>
+          {{ course.level }}
+        </p>
+
+        <p>
+          <strong>Rating:</strong>
+          ⭐ {{ course.rating }}
+        </p>
+
+      </mat-card-content>
+
+      <mat-card-actions>
+
+        <button
+          mat-stroked-button
+          color="primary">
+          View Details
+        </button>
+
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="enrollInCourse(course.id)">
+          Enroll
+        </button>
+
+      </mat-card-actions>
+
+    </mat-card>
+
+  </div>
+
+  <div class="history-section">
+
+    <h2 class="history-title">
+      My Enrollment History
+    </h2>
+
+    <div class="history-grid">
+
+      <mat-card
+        class="history-card"
+        *ngFor="let enrollment of enrollments">
+
+        <mat-card-content>
+
+          <h3>
+            {{ getCourseTitle(enrollment.courseId) }}
+          </h3>
+
+          <p
+            class="status-badge"
+            [class.completed]="enrollment.status === 'completed'">
+
+            {{ enrollment.status }}
+
+          </p>
+
+        </mat-card-content>
+
+        <mat-card-actions>
+
+          <button
+            mat-raised-button
+            color="warn"
+            (click)="deleteEnrollment(enrollment.id)">
+
+            Remove
+
+          </button>
+
+          <button
+            mat-stroked-button
+            color="primary"
+            *ngIf="enrollment.status !== 'completed'"
+            (click)="markAsCompleted(enrollment)">
+
+            Mark Completed
+
+          </button>
+
+        </mat-card-actions>
+
+      </mat-card>
+
+    </div>
+
+  </div>
 
 </div>

@@ -14,4 +14,39 @@ export class EnrollmentService {
   getEnrollments(): Observable<any[]> {
     return this.http.get<any[]>(this.apiUrl);
   }
+
+  getEnrollment(id: number): Observable<any> {
+    return this.http.get<any>(
+      `${this.apiUrl}/${id}`
+    );
+  }
+
+  createEnrollment(
+    enrollment: any
+  ): Observable<any> {
+
+    return this.http.post(
+      this.apiUrl,
+      enrollment
+    );
+  }
+
+  updateEnrollment(
+  id: string | number,
+  enrollment: any
+) {
+  return this.http.put(
+    `${this.apiUrl}/${id}`,
+    enrollment
+  );
+}
+
+  deleteEnrollment(
+    id: number
+  ): Observable<any> {
+
+    return this.http.delete(
+      `${this.apiUrl}/${id}`
+    );
+  }
 }
