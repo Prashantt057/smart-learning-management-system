@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { FormsModule } from '@angular/forms';
@@ -27,7 +27,6 @@ export class EnrollmentComponent implements OnInit {
 
   enrollments: any[] = [];
   courses: any[] = [];
-
   categories: any[] = [];
   instructors: any[] = [];
 
@@ -35,7 +34,8 @@ export class EnrollmentComponent implements OnInit {
     private enrollmentService: EnrollmentService,
     private courseService: CourseService,
     private categoryService: CategoryService,
-    private instructorService: InstructorService
+    private instructorService: InstructorService,
+    private cdr: ChangeDetectorRef  // ✅ added
   ) {}
 
   ngOnInit(): void {
@@ -48,48 +48,40 @@ export class EnrollmentComponent implements OnInit {
   loadEnrollments(): void {
     this.enrollmentService.getEnrollments().subscribe({
       next: (data) => {
-        console.log('Enrollments:', data);
-        this.enrollments = data;
+        this.enrollments = [...data];  // ✅ spread
+        this.cdr.detectChanges();
       },
-      error: (err) => {
-        console.error(err);
-      }
+      error: (err) => { console.error(err); }
     });
   }
 
   loadCourses(): void {
     this.courseService.getCourses().subscribe({
       next: (data) => {
-        console.log('Courses:', data);
-        this.courses = data;
+        this.courses = [...data];  // ✅ spread
+        this.cdr.detectChanges();
       },
-      error: (err) => {
-        console.error(err);
-      }
+      error: (err) => { console.error(err); }
     });
   }
 
   loadCategories(): void {
     this.categoryService.getCategories().subscribe({
       next: (data) => {
-        console.log('Categories:', data);
-        this.categories = data;
+        this.categories = [...data];  // ✅ spread
+        this.cdr.detectChanges();
       },
-      error: (err) => {
-        console.error(err);
-      }
+      error: (err) => { console.error(err); }
     });
   }
 
   loadInstructors(): void {
     this.instructorService.getInstructors().subscribe({
       next: (data) => {
-        console.log('Instructors:', data);
-        this.instructors = data;
+        this.instructors = [...data];  // ✅ spread
+        this.cdr.detectChanges();
       },
-      error: (err) => {
-        console.error(err);
-      }
+      error: (err) => { console.error(err); }
     });
   }
 
@@ -97,7 +89,6 @@ export class EnrollmentComponent implements OnInit {
     const category = this.categories.find(
       c => Number(c.id) === Number(categoryId)
     );
-
     return category ? category.name : 'Unknown';
   }
 
@@ -105,7 +96,6 @@ export class EnrollmentComponent implements OnInit {
     const instructor = this.instructors.find(
       i => Number(i.id) === Number(instructorId)
     );
-
     return instructor ? instructor.name : 'Unknown';
   }
 
@@ -113,12 +103,10 @@ export class EnrollmentComponent implements OnInit {
     const course = this.courses.find(
       c => Number(c.id) === Number(courseId)
     );
-
     return course ? course.title : 'Unknown Course';
   }
 
   enrollInCourse(courseId: number): void {
-
     const enrollmentData = {
       userId: 1,
       courseId: courseId,
@@ -126,73 +114,36 @@ export class EnrollmentComponent implements OnInit {
       status: 'enrolled'
     };
 
-    this.enrollmentService
-      .createEnrollment(enrollmentData)
-      .subscribe({
-
-        next: () => {
-
-          alert('Enrollment Successful!');
-
-          this.loadEnrollments();
-        },
-
-        error: (err) => {
-          console.error(err);
-        }
-
-      });
+    this.enrollmentService.createEnrollment(enrollmentData).subscribe({
+      next: () => {
+        alert('Enrollment Successful!');
+        this.loadEnrollments();
+      },
+      error: (err) => { console.error(err); }
+    });
   }
 
   deleteEnrollment(id: number): void {
+    if (!confirm('Are you sure you want to remove this enrollment?')) return;
 
-    if (!confirm('Are you sure you want to remove this enrollment?')) {
-      return;
-    }
-
-    this.enrollmentService
-      .deleteEnrollment(id)
-      .subscribe({
-
-        next: () => {
-
-          alert('Enrollment removed');
-
-          this.loadEnrollments();
-        },
-
-        error: (err) => {
-          console.error(err);
-        }
-
-      });
+    this.enrollmentService.deleteEnrollment(id).subscribe({
+      next: () => {
+        alert('Enrollment removed');
+        this.loadEnrollments();
+      },
+      error: (err) => { console.error(err); }
+    });
   }
 
   markAsCompleted(enrollment: any): void {
+    const updatedEnrollment = { ...enrollment, status: 'completed' };
 
-    const updatedEnrollment = {
-      ...enrollment,
-      status: 'completed'
-    };
-
-    this.enrollmentService
-      .updateEnrollment(
-        enrollment.id,
-        updatedEnrollment
-      )
-      .subscribe({
-
-        next: () => {
-
-          alert('Course marked as completed');
-
-          this.loadEnrollments();
-        },
-
-        error: (err) => {
-          console.error(err);
-        }
-
-      });
+    this.enrollmentService.updateEnrollment(enrollment.id, updatedEnrollment).subscribe({
+      next: () => {
+        alert('Course marked as completed');
+        this.loadEnrollments();
+      },
+      error: (err) => { console.error(err); }
+    });
   }
 }
