@@ -1,0 +1,28 @@
+--watch/-w can be omitted, JSON Server 1+ watches for file changes by default
+JSON Server started on PORT :3000
+Press CTRL-C to stop
+Watching backend/db.json...
+
+( ˶ˆ ᗜ ˆ˵ )
+
+Index:
+http://localhost:3000/
+
+Static files:
+Serving ./public directory if it exists
+
+Endpoints:
+http://localhost:3000/users
+http://localhost:3000/profiles
+http://localhost:3000/categories
+http://localhost:3000/instructors
+http://localhost:3000/courses
+http://localhost:3000/enrollments
+http://localhost:3000/courseModules
+http://localhost:3000/progress
+http://localhost:3000/assessments
+http://localhost:3000/questions
+http://localhost:3000/assessmentAttempts
+http://localhost:3000/certificates
+http://localhost:3000/notifications
+http://localhost:3000/reports

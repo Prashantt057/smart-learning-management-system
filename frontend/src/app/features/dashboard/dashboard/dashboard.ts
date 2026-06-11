@@ -5,7 +5,7 @@ import { Sidebar } from '../../../components/sidebar/sidebar';
 import { Header } from '../../../components/header/header';
 import { DashboardStats } from '../../../components/dashboard-stats/dashboard-stats';
 
-import { CourseService } from '../../../services/course';
+import { CourseService } from '../../../services/course.service';
 
 @Component({
   selector: 'app-dashboard',

@@ -1,0 +1,25 @@
+<div class="edit-profile-container">
+<div class="profile-form-card">
+  <h2>Edit Profile</h2>
+
+  <form [formGroup]="editForm" (ngSubmit)="updateProfile()">
+    <label>Phone</label>
+
+    <input formControlName="phone" />
+
+    <label>Location</label>
+
+    <input formControlName="location" />
+
+    <label>Experience Level</label>
+
+    <input formControlName="experienceLevel" />
+
+    <label>Skills</label>
+
+    <input formControlName="skills" />
+
+    <button type="submit">Save Changes</button>
+  </form>
+</div>
+</div>

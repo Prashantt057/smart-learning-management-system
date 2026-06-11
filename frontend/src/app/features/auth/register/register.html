@@ -1,0 +1,96 @@
+<div class="auth-container">
+ <div class="auth-info">
+
+    <h1>Smart Learning Platform</h1>
+
+    <p>
+      Learn new skills, track your progress,
+      complete assessments and earn certificates.
+    </p>
+
+    <ul>
+      <li>📚 Explore Courses</li>
+      <li>🎯 Track Learning Progress</li>
+      <li>🏆 Earn Certificates</li>
+      <li>👨‍🏫 Learn From Experts</li>
+    </ul>
+
+  </div>
+  
+  <div class="auth-card">
+<h2>User Registration</h2>
+
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <!-- <div>
+    <label>Username</label>
+    <input type="text" formControlName="username" />
+
+    @if (
+      registerForm.get('username')?.touched && registerForm.get('username')?.hasError('required')
+    ) {
+      <small>Username is required</small>
+    }
+
+    @if (
+      registerForm.get('username')?.touched && registerForm.get('username')?.hasError('minlength')
+    ) {
+      <small>Username must be at least 3 characters</small>
+    }
+  </div> -->
+
+  <!-- <br /> -->
+
+  <div>
+    <label>Name</label>
+    <input type="text" formControlName="name" />
+    @if (
+      registerForm.get('name')?.touched && registerForm.get('name')?.hasError('required')
+    ) {
+      <small>Name is required</small>
+    }
+  </div>
+
+  <br />
+
+  <div>
+    <label>Email</label>
+    <input type="email" formControlName="email" />
+
+    @if (registerForm.get('email')?.touched && registerForm.get('email')?.invalid) {
+      <small>Enter valid email</small>
+    }
+  </div>
+
+  <br />
+
+  <div>
+    <label>Password</label>
+    <input type="password" formControlName="password" />
+
+    @if (
+      registerForm.get('password')?.touched && registerForm.get('password')?.hasError('required')
+    ) {
+      <small>Password is required</small>
+    }
+
+    @if (
+      registerForm.get('password')?.touched && registerForm.get('password')?.hasError('minlength')
+    ) {
+      <small>Password must be at least 6 characters</small>
+    }
+  </div>
+
+  <br />
+
+  <button type="submit" [disabled]="registerForm.invalid">Register</button>
+  <br />
+
+  <p>
+    Already have an account?
+
+    <a routerLink="/login"> Login Here </a>
+  </p>
+</form>
+  </div>
+
+</div>

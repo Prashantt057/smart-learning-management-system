@@ -1,19 +1,13 @@
 <div class="top-bar">
-
   <div class="welcome-section">
     <h1>{{ greeting }}, User 🌸</h1>
     <p>Every day is a chance to learn something beautiful.</p>
   </div>
 
   <div class="header-actions">
-
     <div class="search-wrapper">
       <span class="search-icon">🔍</span>
-      <input
-        type="text"
-        placeholder="Search courses, lessons..."
-        class="search-box"
-      />
+      <input type="text" placeholder="Search courses, lessons..." class="search-box" />
     </div>
 
     <button class="icon-btn">
@@ -21,10 +15,18 @@
       <span class="notif-badge">3</span>
     </button>
 
-    <div class="profile-circle">
-      U
+    <div class="profile-section">
+      <div class="profile-circle" (click)="toggleProfileMenu()">U</div>
+
+      @if (showProfileMenu) {
+        <div class="profile-menu">
+          <a routerLink="/profile"> My Profile </a>
+
+          <a routerLink="/edit-profile"> Edit Profile </a>
+
+          <a routerLink="/preferences"> Preferences </a>
+        </div>
+      }
     </div>
-
   </div>
-
 </div>

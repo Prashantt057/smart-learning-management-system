@@ -1,0 +1,164 @@
+
+.auth-info{
+  width:550px;
+  color:#2d2424;
+}
+
+.auth-info h1{
+  font-size:3rem;
+  line-height: 1.1;
+  margin-bottom:20px;
+  font-family:Georgia, serif;
+}
+.auth-info p{
+  font-size:1.1rem;
+  line-height:1.8;
+  color:#555;
+  text-align:left;
+}
+
+.auth-info ul{
+  margin-top:30px;
+  padding-left:0;
+  list-style:none;
+}
+
+.auth-info li{
+  background:white;
+  padding:15px;
+  margin-bottom:15px;
+  border-radius:15px;
+
+  box-shadow:0 4px 12px rgba(0,0,0,.05);
+}
+
+
+.auth-container {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px;
+
+  font-family: Georgia, serif;
+  gap: 50px;
+  background-color: #bdd8e6;
+
+  background-image:
+    radial-gradient(ellipse 80% 60% at 15% 25%, rgba(255, 255, 255, 0.38) 0%, transparent 65%),
+    radial-gradient(ellipse 60% 70% at 85% 15%, rgba(196, 226, 240, 0.5) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 50% at 50% 85%, rgba(148, 198, 220, 0.35) 0%, transparent 60%);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 500px;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  padding: 35px;
+
+  border-radius: 28px;
+
+  backdrop-filter: blur(8px);
+
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.auth-card h2 {
+  margin-bottom: 25px;
+
+  text-align: center;
+
+  color: #2d2424;
+}
+
+.auth-card label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-weight: 600;
+
+  color: #2d2424;
+}
+
+.auth-card input,
+.auth-card textarea,
+.auth-card select {
+  width: 100%;
+
+  padding: 12px 14px;
+
+  border: 1px solid #dcecf3;
+
+  border-radius: 14px;
+
+  outline: none;
+
+  background: #ffffff;
+
+  font-size: 14px;
+}
+
+.auth-card input:focus,
+.auth-card textarea:focus,
+.auth-card select:focus {
+  border-color: #7da8be;
+
+  box-shadow: 0 0 0 3px rgba(125, 168, 190, 0.15);
+}
+
+.auth-card button {
+  width: 100%;
+
+  padding: 12px;
+
+  border: none;
+
+  border-radius: 20px;
+
+  background: linear-gradient(135deg, #7da8be, #5d8da7);
+
+  color: white;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.auth-card button:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.auth-card small {
+  color: #c62828;
+
+  display: block;
+
+  margin-top: 5px;
+}
+
+.auth-card p {
+  margin-top: 20px;
+
+  text-align: center;
+}
+
+.auth-card a {
+  color: #5d8da7;
+
+  text-decoration: none;
+
+  font-weight: 600;
+}
+
+.auth-card a:hover {
+  text-decoration: underline;
+}

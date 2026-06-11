@@ -1,0 +1,42 @@
+<div class="preferences-page">
+
+<div class="preferences-card">
+  <h2>Preferences</h2>
+
+  <form #prefForm="ngForm">
+    <label>
+      <input
+        type="checkbox"
+        name="emailNotifications"
+        [(ngModel)]="preferences.emailNotifications"
+      />
+
+      Email Notifications
+    </label>
+
+    <label>
+      <input type="checkbox" name="sessionReminders" [(ngModel)]="preferences.sessionReminders" />
+
+      Session Reminders
+    </label>
+
+    <label>
+      <input
+        type="checkbox"
+        name="assessmentReminders"
+        [(ngModel)]="preferences.assessmentReminders"
+      />
+
+      Assessment Reminders
+    </label>
+
+    <select name="dashboardTheme" [(ngModel)]="preferences.dashboardTheme">
+      <option>Light</option>
+
+      <option>Dark</option>
+    </select>
+
+    <button type="button" (click)="savePreferences()">Save Preferences</button>
+  </form>
+</div>
+</div>

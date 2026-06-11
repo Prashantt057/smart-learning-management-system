@@ -1,0 +1,23 @@
+<div class="profile-container">
+  <div class="profile-card">
+
+    <h2>My Profile</h2>
+
+    <p><strong>Name:</strong> {{ currentUser?.name }}</p>
+
+    <p><strong>Email:</strong> {{ currentUser?.email }}</p>
+
+    <p><strong>Role:</strong> {{ currentUser?.role }}</p>
+
+    <hr>
+
+    <p><strong>Phone:</strong> {{ profile().phone }}</p>
+
+    <p><strong>Location:</strong> {{ profile().location }}</p>
+
+    <p><strong>Experience:</strong> {{ profile().experienceLevel }}</p>
+
+    <p><strong>Skills:</strong> {{ profile().skills.join(', ') }}</p>
+
+  </div>
+</div>

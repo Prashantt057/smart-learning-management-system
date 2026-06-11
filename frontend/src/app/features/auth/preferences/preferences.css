@@ -1,0 +1,74 @@
+.preferences-page {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #bdd8e6;
+
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.35), transparent 35%),
+    radial-gradient(circle at 80% 10%, rgba(180, 220, 240, 0.4), transparent 30%),
+    radial-gradient(circle at 70% 80%, rgba(150, 200, 225, 0.3), transparent 35%);
+
+  font-family: Georgia, serif;
+}
+
+.preferences-card {
+  width: 600px;
+
+  background: rgba(255, 255, 255, 0.92);
+
+  padding: 40px;
+
+  border-radius: 30px;
+
+  backdrop-filter: blur(10px);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.preferences-card h2 {
+  
+  margin-bottom: 30px;
+
+  color: #2d2424;
+}
+
+.preference-item {
+  margin-bottom: 20px;
+
+  font-size: 16px;
+}
+
+.preferences-card select {
+  width: 100%;
+
+  padding: 12px;
+ 
+  margin-top: 15px;
+  border-radius: 12px;
+
+  border: 1px solid #d6dfe5;
+}
+
+.preferences-card button {
+  width: 100%;
+
+  margin-top: 25px;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 15px;
+
+  background: linear-gradient(135deg, #7da8be, #5d8da7);
+
+  color: white;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}

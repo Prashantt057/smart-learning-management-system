@@ -106,3 +106,44 @@
   box-shadow: 0 4px 14px rgba(224,123,90,0.3);
   cursor: pointer;
 }
+.profile-section {
+  position: relative;
+}
+
+.profile-menu {
+  position: absolute;
+
+  top: 60px;
+
+  right: 0;
+
+  width: 180px;
+
+  background: white;
+
+  border-radius: 15px;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+
+  overflow: hidden;
+
+  z-index: 1000;
+}
+
+.profile-menu a {
+  display: block;
+
+  padding: 14px 18px;
+
+  text-decoration: none;
+
+  color: #444;
+
+  font-size: 14px;
+
+  transition: 0.2s;
+}
+
+.profile-menu a:hover {
+  background: #f5f5f5;
+}
