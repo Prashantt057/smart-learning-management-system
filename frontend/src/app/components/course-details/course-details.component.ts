@@ -153,12 +153,12 @@ import { AuthService } from '../../services/auth.service';
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      color: var(--text-secondary);
+      color: #555;
       font-weight: 500;
       transition: var(--transition-fast);
     }
     .btn-back:hover {
-      color: var(--text-primary);
+      color: #2d2424;
     }
     .icon-arrow {
       width: 1.2rem;
@@ -184,7 +184,7 @@ import { AuthService } from '../../services/auth.service';
       height: 230px;
       border-radius: var(--radius-lg);
       overflow: hidden;
-      border: 1px solid var(--border-color);
+      border: 1px solid rgba(0, 0, 0, 0.08);
     }
     .image-box img {
       width: 100%;
@@ -257,10 +257,11 @@ import { AuthService } from '../../services/auth.service';
     .title {
       font-size: 2.2rem;
       line-height: 1.2;
+      color: #2d2424;
     }
     .description {
       font-size: 1.1rem;
-      color: var(--text-secondary);
+      color: #555;
       line-height: 1.7;
     }
     .section-card h2 {
@@ -297,16 +298,16 @@ import { AuthService } from '../../services/auth.service';
       gap: 0.75rem;
     }
     .prereq-badge {
-      background-color: var(--bg-tertiary);
-      border: 1px solid var(--border-color);
-      color: var(--accent-secondary);
+      background-color: #f0f4f8;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      color: #e07b5a;
       padding: 0.4rem 1rem;
       border-radius: 9999px;
       font-size: 0.85rem;
       font-weight: 600;
     }
     .prereq-none {
-      color: var(--text-secondary);
+      color: #666;
       font-style: italic;
       font-size: 0.95rem;
     }
@@ -323,7 +324,7 @@ import { AuthService } from '../../services/auth.service';
       top: 15px;
       bottom: 15px;
       width: 2px;
-      background-color: var(--border-color);
+      background-color: rgba(0, 0, 0, 0.08);
     }
     .timeline-item {
       display: flex;
@@ -333,9 +334,9 @@ import { AuthService } from '../../services/auth.service';
     .timeline-badge {
       width: 36px;
       height: 36px;
-      background-color: var(--bg-tertiary);
-      border: 2px solid var(--border-color);
-      color: var(--accent-secondary);
+      background-color: #f0f4f8;
+      border: 2px solid rgba(0, 0, 0, 0.08);
+      color: #e07b5a;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -347,18 +348,18 @@ import { AuthService } from '../../services/auth.service';
       transition: var(--transition-fast);
     }
     .timeline-item:hover .timeline-badge {
-      background-color: var(--accent-primary);
+      background-color: #e07b5a;
       color: white;
-      border-color: var(--accent-primary);
+      border-color: #e07b5a;
     }
     .timeline-content h4 {
       font-size: 1rem;
-      color: var(--text-primary);
+      color: #2d2424;
       margin-bottom: 0.2rem;
     }
     .timeline-content p {
       font-size: 0.9rem;
-      color: var(--text-secondary);
+      color: #555;
     }
     .loading-container, .error-container {
       display: flex;
@@ -366,14 +367,15 @@ import { AuthService } from '../../services/auth.service';
       align-items: center;
       justify-content: center;
       padding: 6rem 2rem;
-      background-color: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
+      background-color: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 20px;
       text-align: center;
+      color: #2d2424;
     }
     .spinner {
-      border: 3px solid rgba(255, 255, 255, 0.05);
-      border-top: 3px solid var(--accent-secondary);
+      border: 3px solid rgba(0, 0, 0, 0.05);
+      border-top: 3px solid #e07b5a;
       border-radius: 50%;
       width: 2.5rem;
       height: 2.5rem;
@@ -387,11 +389,11 @@ import { AuthService } from '../../services/auth.service';
     .error-icon {
       width: 3rem;
       height: 3rem;
-      color: var(--accent-danger);
+      color: #ef4444;
       margin-bottom: 1rem;
     }
     .empty-list-msg {
-      color: var(--text-muted);
+      color: #888;
       font-style: italic;
       font-size: 0.9rem;
     }

@@ -82,29 +82,30 @@ export interface FilterState {
   `,
   styles: [`
     .filter-panel {
-      background-color: var(--bg-secondary);
-      border: 1px solid var(--border-color);
+      background-color: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(0, 0, 0, 0.08);
       border-radius: var(--radius-md);
       padding: 1.5rem;
       margin-bottom: 2rem;
-      box-shadow: var(--shadow-md);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
     }
     .filter-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 1.25rem;
-      border-bottom: 1px solid var(--border-color);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
       padding-bottom: 0.75rem;
     }
     .filter-header h3 {
       font-size: 1.2rem;
       font-weight: 600;
+      color: #2d2424;
     }
     .btn-clear {
       background: none;
       border: none;
-      color: var(--accent-secondary);
+      color: #e07b5a;
       font-size: 0.85rem;
       font-weight: 500;
       cursor: pointer;
@@ -113,8 +114,8 @@ export interface FilterState {
       transition: var(--transition-fast);
     }
     .btn-clear:hover {
-      color: var(--accent-primary);
-      background-color: rgba(255, 255, 255, 0.03);
+      color: #d4634a;
+      background-color: rgba(0, 0, 0, 0.03);
     }
     .filter-grid {
       display: grid;
@@ -129,12 +130,12 @@ export interface FilterState {
     .filter-label {
       font-size: 0.85rem;
       font-weight: 500;
-      color: var(--text-secondary);
+      color: #666;
     }
     .filter-input, .filter-select {
-      background-color: var(--bg-tertiary);
-      border: 1px solid var(--border-color);
-      color: var(--text-primary);
+      background-color: white;
+      border: 1px solid rgba(0, 0, 0, 0.12);
+      color: #2d2424;
       padding: 0.7rem 0.9rem;
       border-radius: var(--radius-md);
       font-family: inherit;
@@ -144,8 +145,8 @@ export interface FilterState {
     }
     .filter-input:focus, .filter-select:focus {
       outline: none;
-      border-color: var(--accent-primary);
-      box-shadow: 0 0 0 2px var(--border-focus);
+      border-color: #e07b5a;
+      box-shadow: 0 0 0 2px rgba(224, 123, 90, 0.15);
     }
   `]
 })

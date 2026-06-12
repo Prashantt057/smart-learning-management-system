@@ -14,6 +14,10 @@ import { ProgressDetails } from './features/progress/progress-details/progress-d
 import { Assessment } from './features/assessment/assessment/assessment';
 import { AssessmentResult } from './features/assessment/assessment-result/assessment-result';
 import { Reports } from './features/reports/reports/reports';
+import { CoursesComponent } from './pages/courses/courses';
+import { CourseListComponent } from './components/course-list/course-list.component';
+import { CourseDetailsComponent } from './components/course-details/course-details.component';
+import { CourseFormComponent } from './components/course-form/course-form.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
@@ -24,7 +28,16 @@ export const routes: Routes = [
   { path: 'edit-profile', component: EditProfileComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'courses', component: DashboardComponent },
+  {
+    path: 'courses',
+    component: CoursesComponent,
+    children: [
+      { path: '', component: CourseListComponent },
+      { path: 'new', component: CourseFormComponent },
+      { path: ':id', component: CourseDetailsComponent },
+      { path: 'edit/:id', component: CourseFormComponent }
+    ]
+  },
   { path: 'enrollment', component: EnrollmentComponent },
   { path: 'progress', component: ProgressTracker },
   { path: 'progress/:id', component: ProgressDetails },

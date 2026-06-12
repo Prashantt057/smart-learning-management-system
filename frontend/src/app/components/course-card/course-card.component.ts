@@ -27,7 +27,7 @@ import { AuthService } from '../../services/auth.service';
         <h3 class="course-title">{{ course().title }}</h3>
         
         <p class="course-instructor">By {{ course().instructor }}</p>
-        <p class="course-description">{{ course().description | slice:0:110 }}{{ course().description.length > 110 ? '...' : '' }}</p>
+        <p class="course-description">{{ course().description ? (course().description | slice:0:110) + (course().description.length > 110 ? '...' : '') : 'No description available.' }}</p>
         
         <div class="course-meta">
           <span class="meta-item">
@@ -62,13 +62,22 @@ import { AuthService } from '../../services/auth.service';
       flex-direction: column;
       height: 100%;
       padding: 0 !important; /* Override standard card padding */
+      background: rgba(255, 255, 255, 0.92) !important;
+      color: #2d2424 !important;
+      border-radius: 20px !important;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06) !important;
+      border: 1px solid rgba(0, 0, 0, 0.05) !important;
+    }
+    .card:hover {
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.09) !important;
+      transform: translateY(-4px);
     }
     .card-image-wrapper {
       position: relative;
       height: 180px;
       overflow: hidden;
-      border-top-left-radius: var(--radius-lg);
-      border-top-right-radius: var(--radius-lg);
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
     }
     .card-image {
       width: 100%;
@@ -97,7 +106,7 @@ import { AuthService } from '../../services/auth.service';
     .course-category {
       font-size: 0.75rem;
       font-weight: 700;
-      color: var(--accent-secondary);
+      color: #e07b5a !important;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       margin-bottom: 0.25rem;
@@ -106,6 +115,9 @@ import { AuthService } from '../../services/auth.service';
       font-size: 1.25rem;
       margin-bottom: 0.5rem;
       line-height: 1.3;
+      color: #2d2424 !important;
+      font-family: Georgia, serif;
+      font-weight: 700;
       display: -webkit-box;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
@@ -114,12 +126,12 @@ import { AuthService } from '../../services/auth.service';
     }
     .course-instructor {
       font-size: 0.85rem;
-      color: var(--text-secondary);
+      color: #666 !important;
       margin-bottom: 0.75rem;
     }
     .course-description {
       font-size: 0.9rem;
-      color: var(--text-muted);
+      color: #555 !important;
       margin-bottom: 1.25rem;
       line-height: 1.5;
       display: -webkit-box;
@@ -132,7 +144,7 @@ import { AuthService } from '../../services/auth.service';
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-top: 1px solid var(--border-color);
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
       padding-top: 0.75rem;
       margin-bottom: 1.25rem;
       font-size: 0.85rem;
@@ -141,11 +153,12 @@ import { AuthService } from '../../services/auth.service';
       display: flex;
       align-items: center;
       gap: 0.35rem;
-      color: var(--text-secondary);
+      color: #666 !important;
     }
     .meta-icon {
       width: 1rem;
       height: 1rem;
+      color: #888 !important;
     }
     .status-badge {
       font-weight: 600;
@@ -154,16 +167,16 @@ import { AuthService } from '../../services/auth.service';
       font-size: 0.75rem;
     }
     .status-not-started {
-      background-color: rgba(100, 116, 139, 0.1);
-      color: var(--text-secondary);
+      background-color: #f0f4f8 !important;
+      color: #475569 !important;
     }
     .status-in-progress {
-      background-color: rgba(245, 158, 11, 0.1);
-      color: var(--accent-warning);
+      background-color: #fff3e0 !important;
+      color: #e65100 !important;
     }
     .status-completed {
-      background-color: rgba(16, 185, 129, 0.1);
-      color: var(--accent-success);
+      background-color: #e8f5e9 !important;
+      color: #2e7d32 !important;
     }
     .card-actions {
       display: flex;
@@ -183,9 +196,9 @@ import { AuthService } from '../../services/auth.service';
       gap: 0.5rem;
     }
     .btn-edit, .btn-delete-icon {
-      background: var(--bg-tertiary);
-      border: 1px solid var(--border-color);
-      color: var(--text-secondary);
+      background: #f0f4f8;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      color: #666;
       cursor: pointer;
       width: 2.2rem;
       height: 2.2rem;
@@ -197,14 +210,14 @@ import { AuthService } from '../../services/auth.service';
       padding: 0;
     }
     .btn-edit:hover {
-      background-color: var(--accent-primary);
+      background-color: #e07b5a;
       color: white;
-      border-color: var(--accent-primary);
+      border-color: #e07b5a;
     }
     .btn-delete-icon:hover {
-      background-color: var(--accent-danger);
+      background-color: #ef4444;
       color: white;
-      border-color: var(--accent-danger);
+      border-color: #ef4444;
     }
     .action-icon {
       width: 1.1rem;

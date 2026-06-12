@@ -84,7 +84,7 @@ import { AuthService } from '../../services/auth.service';
       flex-wrap: wrap;
     }
     .subtitle {
-      color: var(--text-secondary);
+      color: #666;
       font-size: 1rem;
       margin-top: 0.25rem;
     }
@@ -98,15 +98,15 @@ import { AuthService } from '../../services/auth.service';
       align-items: center;
       justify-content: center;
       padding: 4rem 2rem;
-      background-color: var(--bg-secondary);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
+      background-color: rgba(255, 255, 255, 0.92);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      border-radius: 20px;
       text-align: center;
-      box-shadow: var(--shadow-sm);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
     }
     .spinner {
-      border: 3px solid rgba(255, 255, 255, 0.05);
-      border-top: 3px solid var(--accent-secondary);
+      border: 3px solid rgba(0, 0, 0, 0.05);
+      border-top: 3px solid #e07b5a;
       border-radius: 50%;
       width: 2.5rem;
       height: 2.5rem;
@@ -123,17 +123,18 @@ import { AuthService } from '../../services/auth.service';
       margin-bottom: 1rem;
     }
     .error-icon {
-      color: var(--accent-danger);
+      color: #ef4444;
     }
     .empty-icon {
-      color: var(--text-muted);
+      color: #888;
     }
     .empty-container h3 {
       font-size: 1.4rem;
       margin-bottom: 0.5rem;
+      color: #2d2424;
     }
     .empty-container p {
-      color: var(--text-secondary);
+      color: #666;
     }
   `]
 })

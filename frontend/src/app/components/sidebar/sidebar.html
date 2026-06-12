@@ -5,32 +5,32 @@
 
 <nav class="menu">
 
-  <a routerLink="/" class="menu-item active">
+  <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="menu-item">
     <span class="menu-icon">⊞</span>
     <span>Dashboard</span>
   </a>
 
-  <a routerLink="/courses" class="menu-item">
+  <a routerLink="/courses" routerLinkActive="active" class="menu-item">
     <span class="menu-icon">▤</span>
     <span>Courses</span>
   </a>
 
-  <a routerLink="/enrollment" class="menu-item">
+  <a routerLink="/enrollment" routerLinkActive="active" class="menu-item">
     <span class="menu-icon">✎</span>
     <span>Enrollment</span>
   </a>
 
-  <a routerLink="/progress" class="menu-item">
+  <a routerLink="/progress" routerLinkActive="active" class="menu-item">
     <span class="menu-icon">↗</span>
     <span>Progress</span>
   </a>
 
-  <a routerLink="/certificates" class="menu-item">
+  <a routerLink="/certificates" routerLinkActive="active" class="menu-item">
     <span class="menu-icon">◎</span>
     <span>Certificates</span>
   </a>
 
-  <a routerLink="/reports" class="menu-item">
+  <a routerLink="/reports" routerLinkActive="active" class="menu-item">
     <span class="menu-icon">≡</span>
     <span>Reports</span>
   </a>
